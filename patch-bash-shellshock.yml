@@ -11,7 +11,7 @@
        register: result
        failed_when: "'vulnerable' in result.stdout"
        changed_when: false
-       always_run: yes
+       check_mode: no
        ignore_errors: yes
 
      - name: ensure bash is not vulnerable to CVE-2014-7169
@@ -20,7 +20,7 @@
        register: result
        failed_when: "'error importing function definition for' in result.stdout"
        changed_when: false
-       always_run: yes
+       check_mode: no
        ignore_errors: yes
 
      - name: ensure bash is not vulnerable to CVE-2014-7186
@@ -29,7 +29,7 @@
        register: result
        failed_when: "result.rc != 0"
        changed_when: false
-       always_run: yes
+       check_mode: no
        ignore_errors: yes
 
      - name: ensure bash is not vulnerable to CVE-2014-7187
@@ -38,5 +38,5 @@
        register: result
        failed_when: "result.rc != 0"
        changed_when: false
-       always_run: yes
+       check_mode: no
        ignore_errors: yes
